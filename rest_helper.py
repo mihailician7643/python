@@ -27,15 +27,21 @@ if  num > 0 :
       
       while count < num:
            try:
+             string=''
              count += 1
+             urlcount = 0
              url = (config['Urls']['url' + str(count)])
-             print(url[0:8] + username + '@' + url[8:28] + urlpath)
+             while url[urlcount] != '/':
+                   urlcount += 1
+             urlcount += 2    
+             string = url[0:urlcount]
+             print(string + username + '@' + url[urlcount:(len(url))] + urlpath)
            except:
              exit('\n')
              
   
-
       print('\n')
+      
              
              
       
